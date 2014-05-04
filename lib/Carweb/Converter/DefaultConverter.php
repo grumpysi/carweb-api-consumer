@@ -13,7 +13,7 @@ class DefaultConverter implements ConverterInterface
     public function convert($string)
     {
         if(class_exists('LSS\XML2Array'))
-            return LSS\XML2Array::createArray($string);
+            return \LSS\XML2Array::createArray($string);
         else
             return $string;
     }
