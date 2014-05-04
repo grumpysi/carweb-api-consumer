@@ -85,7 +85,7 @@ class Consumer
         $this->strKey1 = $strKey1;
         $this->cache = $cache;
         $this->validate = $validate;
-        $this->web_version = $web_version
+        $this->web_version = $web_version;
     }
 
     /**
