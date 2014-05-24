@@ -77,7 +77,7 @@ class Consumer
      * @param $strKey1
      * @param null|\Carweb\Cache\CacheInterface $cache
      */
-    public function __construct($client, $strUserName, $strPassword, $strKey1, CacheInterface $cache = null, $validate = true)
+    public function __construct($client, $strUserName, $strPassword, $strKey1,  $web_version, CacheInterface $cache = null, $validate = true )
     {
         $this->client = $client;
         $this->strUserName = $strUserName;
@@ -85,6 +85,7 @@ class Consumer
         $this->strKey1 = $strKey1;
         $this->cache = $cache;
         $this->validate = $validate;
+        $this->web_version = $web_version;
     }
 
     /**
@@ -119,7 +120,7 @@ class Consumer
             'strUserName' => $this->strUserName,
             'strPassword' => $this->strPassword,
             'strKey1' => $this->strKey1,
-            'strVersion' => self::API_VERSION,
+            'strVersion' => $this->web_version,
             'strVRM' => $vrm,
             'strClientRef' => $strClientRef,
             'strClientDescription' => $strClientDescription
@@ -159,7 +160,7 @@ class Consumer
             'strUserName' => $this->strUserName,
             'strPassword' => $this->strPassword,
             'strKey1' => $this->strKey1,
-            'strVersion' => self::API_VERSION,
+            'strVersion' => $this->web_version,
             'strVIN' => $vin,
             'strClientRef' => $strClientRef,
             'strClientDescription' => $strClientDescription
